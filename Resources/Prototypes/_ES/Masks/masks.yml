@@ -92,6 +92,17 @@
     actions:
     - ESActionMaskAdrenalinePump
 
+- type: esMask
+  id: ESGlutton
+  name: es-mask-glutton-name
+  troupe: ESCrew
+  description: es-mask-glutton-desc
+  color: yellowgreen
+  objectives:
+    all:
+    - id: ESObjectiveEatUniqueFoods
+    - id: ESObjectiveEatFood
+
 # Traitor Masks
 - type: esMask
   id: ESBaseTraitor
