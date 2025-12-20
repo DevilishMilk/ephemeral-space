@@ -173,6 +173,18 @@
           weight: 2
       amount: 1, 2
 
+- type: esMask
+  id: ESMartyr
+  name: es-mask-martyr-name
+  troupe: ESCrew
+  description: es-mask-martyr-desc
+  color: gold
+  mindComponents:
+  - type: ESMartyr
+  objectives:
+    all:
+    - id: ESObjectiveMartyrBeKilled
+
 # Traitor Masks
 - type: esMask
   id: ESBaseTraitor
