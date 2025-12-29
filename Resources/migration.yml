@@ -191,6 +191,27 @@ ClothingHandsGlovesNitrile: ClothingHandsGlovesColorBlue
 # New laser box prototype
 GlassBoxLaserFilled: ESDisplayCaseCaptainEnergyGun
 
+# 2025-12-26
+SpawnPointCargoTechnician: ESSpawnPointCargoTechnician
+SpawnPointPassenger: ESSpawnPointAssistant
+SpawnPointClown: ESSpawnPointClown
+SpawnPointReporter: ESSpawnPointReporter
+SpawnPointBartender: ESSpawnPointBartender
+SpawnPointChef: ESSpawnPointChef
+SpawnPointBotanist: ESSpawnPointBotanist
+SpawnPointJanitor: ESSpawnPointJanitor
+SpawnPointCaptain: ESSpawnPointCaptain
+SpawnPointHeadOfPersonnel: ESSpawnPointHeadOfPersonnel
+SpawnPointHeadOfSecurity: ESSpawnPointHeadOfSecurity
+SpawnPointStationEngineer: ESSpawnPointStationEngineer
+SpawnPointAtmos: ESSpawnPointAtmos
+SpawnPointMedicalDoctor: ESSpawnPointMedicalDoctor
+SpawnPointChemist: ESSpawnPointChemist
+SpawnPointScientist: ESSpawnPointScientist
+SpawnPointWarden: ESSpawnPointWarden
+SpawnPointSecurityOfficer: ESSpawnPointSecurityOfficer
+SpawnPointDetective: ESSpawnPointDetective
+
 # ES END
 
 # 2023-07-03
