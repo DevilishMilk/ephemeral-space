@@ -23,8 +23,8 @@
   equipment:
     shoes: ClothingShoesColorBrown
     eyes: ClothingEyesGlassesSecurity
-    gloves: ClothingHandsGlovesCaptain
     id: CaptainPDA
+    gloves: ClothingHandsGlovesCaptain
     ears: ClothingHeadsetAltCommand
     head: ClothingHeadHatCaptain
     jumpsuit: ClothingUniformJumpsuitCaptain
@@ -32,4 +32,5 @@
     back: ClothingBackpackCaptain
   storage:
     back:
+    - ESBoxSurvival
     - Flash
