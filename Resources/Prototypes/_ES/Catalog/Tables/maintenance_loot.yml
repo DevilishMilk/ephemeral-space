@@ -300,6 +300,8 @@
     - id: d20Dice
     - id: Wristwatch
 
+    - id: WeaponPistolCHIMP
+
 - type: entityTable
   id: ESMaintLootRare
   table:
