@@ -152,3 +152,10 @@
 - type: injectorMode
   parent: [ BaseAdvancedJetInjectorMode, BaseDynamicMode ]
   id: AdvancedJetInjectorDynamicMode
+
+# ES - START
+- type: injectorMode
+  parent: [ HyposprayInjectMode ]
+  id: ESSleepyPenMode
+  injectOnUse: false
+
