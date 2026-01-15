@@ -1,8 +1,10 @@
+#nullable enable
 using System.Collections.Generic;
 using System.Linq;
 using Content.IntegrationTests.Tests._Citadel;
 using Content.Server._ES.Masks.Masquerades;
 using Content.Server.GameTicking;
+using Content.Server.GameTicking.Presets;
 using Content.Shared._Citadel.Utilities;
 using Content.Shared._ES.Masks;
 using Content.Shared._ES.Masks.Components;
@@ -31,7 +33,8 @@ public sealed class MasqueradeTests : GameTest
         Assert.Throws<NotImplementedException>(() =>
         {
             _ser.WriteValue<MasqueradeEntry>(
-                new MasqueradeEntry.DirectEntry(new HashSet<ProtoId<ESMaskPrototype>>() { "Foo", "Bar" }, 1, false));
+                new MasqueradeEntry.DirectEntry(new HashSet<ProtoId<ESMaskPrototype>>() { "Foo", "Bar" }, 1, false),
+                notNullableOverride: true);
         });
     }
 
@@ -62,7 +65,7 @@ public sealed class MasqueradeTests : GameTest
 
             Assert.That(error, Is.Null);
 
-            TestOnEntry(entry);
+            TestOnEntry(entry!);
         }
 
         {
@@ -70,7 +73,7 @@ public sealed class MasqueradeTests : GameTest
 
             Assert.That(error, Is.Null);
 
-            TestOnEntry(entry);
+            TestOnEntry(entry!);
         }
     }
 
@@ -123,13 +126,13 @@ public sealed class MasqueradeRunTests : GameTest
         InLobby = true,
     };
 
-    [TestCase("RandomTraitors", 35)]
-    [TestCase("Freakshow", 35)]
-    [TestCase("Freakshow", 21)]
-    [TestCase("Showdown", 35)]
-    [TestCase("Traitors", 35)]
-    [TestCase("RedCarpet", 35)]
-    public async Task TestMasqueradeStart(string protoStr, int userCount)
+    public static readonly string[] Masquerades = PrototypeDataScrounger.PrototypesOfKind<ESMasqueradePrototype>();
+
+    [Test]
+    public async Task TestMasqueradeStart(
+            [ValueSource(nameof(Masquerades))] string protoStr,
+            [Values([35, 21])] int userCount
+        )
     {
         var proto = _proto.Index<ESMasqueradePrototype>(protoStr);
         // A smattering of people. Not including the real client.
@@ -187,11 +190,8 @@ public sealed class MasqueradeRunTests : GameTest
             }
 
             _sGameticker.RestartRound();
-        });
 
-        await Server.WaitPost(() =>
-        {
-            _sGameticker.SetGamePreset("Extended");
+            _sGameticker.SetGamePreset((GamePresetPrototype?) null);
         });
     }
 }
