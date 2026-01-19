@@ -1,15 +1,14 @@
+#nullable enable
 using NUnit.Framework.Constraints;
-using NUnit.Framework.Internal;
 using Robust.UnitTesting;
 
 namespace Content.IntegrationTests.Tests._Citadel.Constraints;
 
 /// <summary>
-///     A prefix constraint like <see cref="PropertyConstraint"/>, for entity components.
+///     Constraint for whether a component exists.
 /// </summary>
 /// <seealso cref="CompConstraintExtensions"/>
-public sealed class CompConstraint(Type tComp, IIntegrationInstance instance, IConstraint baseConstraint)
-    : PrefixConstraint(baseConstraint, $"component {tComp.Name}")
+public sealed class CompExistsConstraint(Type component, IIntegrationInstance instance) : Constraint
 {
     public override ConstraintResult ApplyTo<TActual>(TActual actual)
     {
@@ -24,10 +23,8 @@ public sealed class CompConstraint(Type tComp, IIntegrationInstance instance, IC
             return new ConstraintResult(this, actual, ConstraintStatus.Failure);
         }
 
-        if (!instance.EntMan.TryGetComponent(ent, tComp, out var comp))
-            return new ConstraintResult(this, actual, ConstraintStatus.Failure);
-
-        var baseResult = Reflect.InvokeApplyTo(constraint: baseConstraint, tComp, comp);
-        return new ConstraintResult(this, baseResult.ActualValue, baseResult.Status);
+        return new ConstraintResult(this, actual, instance.EntMan.HasComponent(ent, component));
     }
+
+    public override string Description => $"has the component {component.Name}";
 }
