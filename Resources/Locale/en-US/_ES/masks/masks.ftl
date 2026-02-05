@@ -57,6 +57,9 @@ es-mask-avenger-desc = As an avenger, protect your target from being killed at a
 es-mask-parasite-name = Parasite
 es-mask-parasite-desc = As a parasite, you are a devilish worm. Get killed by someone else in order to take control of their bodies and steal their mask.
 
+es-mask-hitman-name = Hitman
+es-mask-hitman-desc = As a hitman, use your dossiers in order to identify your targets and take them out.
+
 # Traitor masks
 es-mask-troupe-traitor-examine = They're a fellow [bold][color=red]Traitor[/color][/bold] and a member of the [bold][color=red]Syndicate[/color][/bold]. Work together to complete your group objectives.
 
