@@ -201,7 +201,7 @@
     - id: ClothingMaskMuzzle
     - id: ClothingBeltMedical
     - id: ClothingBeltUtility
-    - id: ClothingHeadHelmetBasic
+    - id: ESClothingHeadHelmetSecurity
 
     - id: DefaultStationBeaconUnanchored
     - id: Soap # TODO: soap pool?
@@ -321,7 +321,6 @@
     - id: ClothingHandsGlovesCombat
     - id: ClothingBeltSecurity
     - id: ClothingShoesBootsJack
-    - id: ClothingHeadHelmetJustice
 
     - all: # Russian Outfit
       - id: ESClothingHeadUshanka

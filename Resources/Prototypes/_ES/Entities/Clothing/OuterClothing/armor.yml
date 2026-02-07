@@ -1,16 +1,16 @@
 # Base Prototypes
 - type: entity
-  id: ESBaseOuterArmor
+  id: ESBaseOuterArmor # Effectively 5 DT with helmet. Keep in mind if adding new armors.
   suffix: ES
   abstract: true
   components:
   - type: Armor
     modifiers:
       flatReductions:
-        Blunt: 5
-        Slash: 5
-        Piercing: 5
-        Heat: 5
+        Blunt: 4
+        Slash: 4
+        Piercing: 4
+        Heat: 5 # Heat DT should be kept exclusively here so thats higher
   - type: ExplosionResistance
     damageCoefficient: 0.90
   - type: GroupExamine
@@ -23,9 +23,9 @@
   - type: Armor
     modifiers:
       flatReductions:
-        Blunt: 6
-        Slash: 6
-        Piercing: 6
+        Blunt: 5
+        Slash: 5
+        Piercing: 5
         Heat: 6
   - type: ExplosionResistance
     damageCoefficient: 0.80
